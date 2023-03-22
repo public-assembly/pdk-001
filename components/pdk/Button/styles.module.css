@@ -1,0 +1,56 @@
+/* TODO move btn assets to pdk components */
+
+.btn {
+  position: relative;
+  overflow: visible;
+
+  min-width: 96px;
+  min-height: 96px;
+
+  background:
+    url("../assets/btn-bg-1.png") top left, 
+    url("../assets/btn-bg-3.png") top right,
+    url("../assets/btn-bg-7.png") bottom left,
+    url("../assets/btn-bg-5.png") bottom right,
+    url("../assets/btn-bg-2.png") top center / calc(100% - 32px) 16px,
+    url("../assets/btn-bg-4.png") center right / 16px calc(100% - 32px),
+    url("../assets/btn-bg-6.png") bottom center / calc(100% - 32px) 16px,
+    url("../assets/btn-bg-8.png") center left / 16px calc(100% - 32px),
+    theme(colors.gray.100);
+  background-repeat: no-repeat;
+
+  image-rendering: pixelated;
+}
+
+.btn:disabled > * {
+  filter: saturate(0);
+}
+
+.btn:not(:disabled):active > * {
+  position: relative;
+  top: 7px;
+  left: 7px;
+  z-index: 100;
+}
+
+.btn:not(:disabled):active:after {
+  content: '';
+  position: absolute;
+
+  top: -5px;
+  right: -3px;
+  bottom: -11px;
+  left: -5px;
+
+  background:
+    url("../assets/btn-bg-1_active.png") top left, 
+    url("../assets/btn-bg-3_active.png") top right,
+    url("../assets/btn-bg-7_active.png") bottom left,
+    url("../assets/btn-bg-5_active.png") bottom right,
+    url("../assets/btn-bg-2_active.png") top center / calc(100% - 32px) 16px,
+    url("../assets/btn-bg-4_active.png") center right / 16px calc(100% - 32px),
+    url("../assets/btn-bg-6_active.png") bottom center / calc(100% - 32px) 16px,
+    url("../assets/btn-bg-8_active.png") center left / 16px calc(100% - 32px),
+    theme(colors.gray.100);
+  background-repeat: no-repeat;
+}

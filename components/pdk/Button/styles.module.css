@@ -10,11 +10,11 @@
   image-rendering: pixelated;
 
   border: 16px solid;
-  border-image: url("../assets/button/bg_default.png") 16 stretch;
+  border-image: url("../assets/button/border-image_default.png") 16 stretch;
 }
 
 .btn:not(:disabled):active {
-  border-image: url("../assets/button/bg_active.png") 16 / auto / 5px 3px 11px 5px stretch;
+  border-image: url("../assets/button/border-image_active.png") 16 / auto / 5px 3px 11px 5px stretch;
 }
 
 .btnBody {

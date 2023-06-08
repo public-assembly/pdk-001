@@ -1,0 +1,12 @@
+.border {
+  overflow: visible;
+  box-sizing: border-box;
+
+  min-width: 27px;
+  min-height: 27px;
+
+  image-rendering: pixelated;
+
+  border: 9px solid;
+  border-image: url("../assets/border/border-image.png") 18 stretch;
+}

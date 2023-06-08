@@ -1,8 +1,7 @@
-import Image from 'next/image'
+import PDKText from './PDKText'
 import Button from './Button'
 
-import iconDevil from './assets/icon/devil.png'
-import iconDevilDisabled from './assets/icon/devil_disabled.png'
+import { IconDevil } from './Icon'
 
 import textMint from './assets/text/mint.png'
 import textMy from './assets/text/my.png'
@@ -14,26 +13,25 @@ import textDestructionDisabled from './assets/text/destruction_disabled.png'
 
 export type MintButtonProps = React.ComponentPropsWithoutRef<"button">
 
-export default function MintButton({disabled, ...props}: MintButtonProps) {
+export default function MintButton({ disabled, ...props }: MintButtonProps) {
   return (
-    <Button className="px-[62.5px] py-[25px]" {...props} disabled={disabled}>
-      <Image className="m-auto mb-[7px]" src={disabled ? iconDevilDisabled : iconDevil} alt="Devil icon" />
-      <div className="flex flex-wrap gap-[10px] justify-center ">
+    <Button className="px-[31.25px] py-[12.5px]" {...props} disabled={disabled}>
+      <IconDevil className="m-auto mb-[3.5px]" disabled={disabled} />
+      <div className="flex flex-wrap gap-[5px] justify-center ">
         {disabled ? (
           <>
-            <Image className="max-w-none" src={textMintDisabled} alt="Mint" />
-            <Image className="max-w-none" src={textMyDisabled} alt="My" />
-            <Image className="max-w-none" src={textDestructionDisabled} alt="Destruction" />
+            <PDKText image={textMintDisabled} alt="Mint" />
+            <PDKText image={textMyDisabled} alt="My" />
+            <PDKText image={textDestructionDisabled} alt="Destruction" />
           </>
         ) : (
           <>
-            <Image className="max-w-none" src={textMint} alt="Mint" />
-            <Image className="max-w-none" src={textMy} alt="My" />
-            <Image className="max-w-none" src={textDestruction} alt="Destruction" />
+            <PDKText image={textMint} alt="Mint" />
+            <PDKText image={textMy} alt="My" />
+            <PDKText image={textDestruction} alt="Destruction" />
           </>
         )}
       </div>
     </Button>
   )
 }
-
